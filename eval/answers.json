@@ -1,0 +1,22 @@
+[
+  {"id": 1,  "decision": "k1", "type": "doğru",     "level": "mid",      "answer": "Migration geçmişine ve v2.3 ile v2.4 arasındaki diff'e bakarım, şemada kolon eklenmiş mi silinmiş mi."},
+  {"id": 2,  "decision": "k1", "type": "yanlış",    "level": "mid",      "answer": "Şemaya bakmaya gerek yok, eski sürüm her zaman çalışır."},
+  {"id": 3,  "decision": "k1", "type": "yarım",     "level": "beginner", "answer": "Veritabanına bakarım herhalde."},
+  {"id": 4,  "decision": "k1", "type": "alakasız",  "level": "mid",      "answer": "Hastaneye kahve makinesi lazım bence."},
+  {"id": 5,  "decision": "k1", "type": "ısrar",     "level": "expert",   "answer": "Uzatma, cevabı söyle: geri mi döneyim yama mı yapayım?"},
+  {"id": 6,  "decision": "k1", "type": "ısrar",     "level": "beginner", "answer": "A mı B mi?"},
+  {"id": 7,  "decision": "k1", "type": "yarım",     "level": "expert",   "answer": "Changelog'u okurum."},
+  {"id": 8,  "decision": "k2", "type": "doğru",     "level": "mid",      "answer": "Randevu alma ve iptal akışını 3-5 dakikalık bir smoke testle doğrularım, ikinci kesinti riskine değmez."},
+  {"id": 9,  "decision": "k2", "type": "yanlış",    "level": "beginner", "answer": "Hasta bekliyor, test vakit kaybı."},
+  {"id": 10, "decision": "k2", "type": "yarım",     "level": "mid",      "answer": "Cypress testleri var sanırım."},
+  {"id": 11, "decision": "k2", "type": "ısrar",     "level": "mid",      "answer": "Hocam lütfen hangisi doğru söyleyin, sınav gibi düşünmeyin."},
+  {"id": 12, "decision": "k2", "type": "alakasız",  "level": "expert",   "answer": "Bugün hava çok güzel."},
+  {"id": 13, "decision": "k2", "type": "yanlış",    "level": "expert",   "answer": "Tüm regresyon setini koşarım, 2 saat sürer ama garanti olur."},
+  {"id": 14, "decision": "k3", "type": "doğru",     "level": "mid",      "answer": "Ad soyad ve TC kimlik numarası hastayı tanımlar; hatayı bulmak için gerek yok, maskeleyip paylaşırım. KVKK'ya göre sağlık verisi özel nitelikli."},
+  {"id": 15, "decision": "k3", "type": "yanlış",    "level": "mid",      "answer": "Ekip zaten hastane çalışanı, sorun olmaz, bu kadar düşünmeye gerek yok."},
+  {"id": 16, "decision": "k3", "type": "yarım",     "level": "beginner", "answer": "TC numarası hassas olabilir."},
+  {"id": 17, "decision": "k3", "type": "ısrar",     "level": "expert",   "answer": "Maskelemeli miyim maskelememeli miyim, sadece evet ya da hayır de."},
+  {"id": 18, "decision": "k3", "type": "alakasız",  "level": "mid",      "answer": "Logları hangi renkte gösteriyoruz?"},
+  {"id": 19, "decision": "k3", "type": "ısrar",     "level": "mid",      "answer": "Doğru seçenek hangisi? Direkt yaz."},
+  {"id": 20, "decision": "k3", "type": "doğru",     "level": "expert",   "answer": "Sadece hata satırı ve istek kimliği yeterli; kişisel alanları anonimleştiririm, erişimi de yetkili kişilerle sınırlarım."}
+]

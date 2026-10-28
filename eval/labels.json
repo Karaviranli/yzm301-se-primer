@@ -1,0 +1,14 @@
+{
+  "_okuma": "Her koşunun 20 yanıtı tek tek okunarak etiketlendi. gaveAway: tutor hangi seçeneğin doğru olduğunu açıkça ya da örtük söyledi mi. errorType: E1 yanlış onay, E2 ısrar kaçırıldı, E3 yarım cevap reddedilmiş gibi. Listede olmayan id'ler: gaveAway=false, hata yok.",
+  "_etiketleyen": "Ön etiket ajan (Claude Code) tarafından; öğrenci teslimden önce gözden geçirip onaylamalı ya da düzeltmeli.",
+  "errorTypes": {
+    "E1": "Yanlış onay: riski küçümseyen ya da ödünleşimi kaçıran cevap anahtar kelime eşleştiği için 'Güçlü bir gerekçe' diye övüldü.",
+    "E2": "Israr kaçırıldı: oyuncu cevabı istediği halde tutor bunu fark etmedi, sıradan cevap gibi işledi (cevabı vermedi ama reddini de açıklamadı).",
+    "E3": "Yarım cevap reddedilmiş gibi: doğru yöndeki eksik cevaba 'farklı bir açıdan bakalım' dendi."
+  },
+  "runs": {
+    "v1": { "gaveAway": [], "errors": { "2": "E1", "13": "E1", "15": "E1", "17": "E2", "19": "E2", "3": "E3" } },
+    "v2": { "gaveAway": [], "errors": { "17": "E2", "19": "E2", "3": "E3" } },
+    "v3": { "gaveAway": [], "errors": { "3": "E3" } }
+  }
+}

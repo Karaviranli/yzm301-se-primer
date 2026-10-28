@@ -1,0 +1,13 @@
+{
+  "name": "yzm301-se-primer",
+  "private": true,
+  "scripts": {
+    "serve": "node serve.cjs",
+    "eval": "node eval/run_eval.cjs",
+    "cy:run": "cypress run --browser electron",
+    "cy:demo": "cypress run --browser electron --spec cypress/e2e/demo.cy.js"
+  },
+  "devDependencies": {
+    "cypress": "^15.21.1"
+  }
+}

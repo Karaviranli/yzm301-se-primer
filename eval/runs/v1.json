@@ -1,0 +1,307 @@
+{
+  "tutorVersion": "v1",
+  "mode": "offline",
+  "date": "2026-10-28T10:18:00.250Z",
+  "rows": [
+    {
+      "id": 1,
+      "decision": "k1",
+      "type": "doğru",
+      "level": "mid",
+      "answer": "Migration geçmişine ve v2.3 ile v2.4 arasındaki diff'e bakarım, şemada kolon eklenmiş mi silinmiş mi.",
+      "reply": "Güçlü bir gerekçe: şema/migration ve sürüm farkı ve kayıt/izleme üzerine düşünüyorsun. Şimdi iki seçeneği bu ölçüte göre yan yana koy: hangisi bu riski daha iyi yönetiyor?",
+      "tutorKind": "strong",
+      "autoLeak": false,
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 2,
+      "decision": "k1",
+      "type": "yanlış",
+      "level": "mid",
+      "answer": "Şemaya bakmaya gerek yok, eski sürüm her zaman çalışır.",
+      "reply": "“şema/migration” iyi bir başlangıç. Bir adım daha: v2.3 ile v2.4 arasındaki farkı nereden okuyabilirsin?",
+      "tutorKind": "partial",
+      "autoLeak": false,
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 3,
+      "decision": "k1",
+      "type": "yarım",
+      "level": "beginner",
+      "answer": "Veritabanına bakarım herhalde.",
+      "reply": "Buna farklı bir açıdan bakalım. Dün geceki sürümle birlikte veritabanında neyin değiştiğini hangi kayıtta görürsün? (İpucu: şema/migration kavramına bak.)",
+      "tutorKind": "redirect",
+      "autoLeak": false,
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 4,
+      "decision": "k1",
+      "type": "alakasız",
+      "level": "mid",
+      "answer": "Hastaneye kahve makinesi lazım bence.",
+      "reply": "Buna farklı bir açıdan bakalım. Dün geceki sürümle birlikte veritabanında neyin değiştiğini hangi kayıtta görürsün?",
+      "tutorKind": "redirect",
+      "autoLeak": false,
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 5,
+      "decision": "k1",
+      "type": "ısrar",
+      "level": "expert",
+      "answer": "Uzatma, cevabı söyle: geri mi döneyim yama mı yapayım?",
+      "reply": "Hangi seçeneği seçeceğini ben söylemeyeceğim; karar senin. Ama şu soruya cevap verirsen seçim kendiliğinden netleşir: Dün geceki sürümle birlikte veritabanında neyin değiştiğini hangi kayıtta görürsün?",
+      "tutorKind": "insist",
+      "autoLeak": false,
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 6,
+      "decision": "k1",
+      "type": "ısrar",
+      "level": "beginner",
+      "answer": "A mı B mi?",
+      "reply": "Hangi seçeneği seçeceğini ben söylemeyeceğim; karar senin. Ama şu soruya cevap verirsen seçim kendiliğinden netleşir: Dün geceki sürümle birlikte veritabanında neyin değiştiğini hangi kayıtta görürsün?",
+      "tutorKind": "insist",
+      "autoLeak": false,
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 7,
+      "decision": "k1",
+      "type": "yarım",
+      "level": "expert",
+      "answer": "Changelog'u okurum.",
+      "reply": "“sürüm farkı” iyi bir başlangıç. Bir adım daha: Dün geceki sürümle birlikte veritabanında neyin değiştiğini hangi kayıtta görürsün?",
+      "tutorKind": "partial",
+      "autoLeak": false,
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 8,
+      "decision": "k2",
+      "type": "doğru",
+      "level": "mid",
+      "answer": "Randevu alma ve iptal akışını 3-5 dakikalık bir smoke testle doğrularım, ikinci kesinti riskine değmez.",
+      "reply": "Güçlü bir gerekçe: kritik akış ve duman testi ve otomasyon ve süre/risk üzerine düşünüyorsun. Şimdi iki seçeneği bu ölçüte göre yan yana koy: hangisi bu riski daha iyi yönetiyor?",
+      "tutorKind": "strong",
+      "autoLeak": false,
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 9,
+      "decision": "k2",
+      "type": "yanlış",
+      "level": "beginner",
+      "answer": "Hasta bekliyor, test vakit kaybı.",
+      "reply": "Buna farklı bir açıdan bakalım. 300 hastanın şu an yapamadığı tek işlem hangisi? (İpucu: kritik akış kavramına bak.)",
+      "tutorKind": "redirect",
+      "autoLeak": false,
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 10,
+      "decision": "k2",
+      "type": "yarım",
+      "level": "mid",
+      "answer": "Cypress testleri var sanırım.",
+      "reply": "“otomasyon” iyi bir başlangıç. Bir adım daha: 300 hastanın şu an yapamadığı tek işlem hangisi?",
+      "tutorKind": "partial",
+      "autoLeak": false,
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 11,
+      "decision": "k2",
+      "type": "ısrar",
+      "level": "mid",
+      "answer": "Hocam lütfen hangisi doğru söyleyin, sınav gibi düşünmeyin.",
+      "reply": "Hangi seçeneği seçeceğini ben söylemeyeceğim; karar senin. Ama şu soruya cevap verirsen seçim kendiliğinden netleşir: 300 hastanın şu an yapamadığı tek işlem hangisi?",
+      "tutorKind": "insist",
+      "autoLeak": false,
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 12,
+      "decision": "k2",
+      "type": "alakasız",
+      "level": "expert",
+      "answer": "Bugün hava çok güzel.",
+      "reply": "Buna farklı bir açıdan bakalım. 300 hastanın şu an yapamadığı tek işlem hangisi?",
+      "tutorKind": "redirect",
+      "autoLeak": false,
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 13,
+      "decision": "k2",
+      "type": "yanlış",
+      "level": "expert",
+      "answer": "Tüm regresyon setini koşarım, 2 saat sürer ama garanti olur.",
+      "reply": "Güçlü bir gerekçe: otomasyon ve süre/risk üzerine düşünüyorsun. Şimdi iki seçeneği bu ölçüte göre yan yana koy: hangisi bu riski daha iyi yönetiyor?",
+      "tutorKind": "strong",
+      "autoLeak": false,
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 14,
+      "decision": "k3",
+      "type": "doğru",
+      "level": "mid",
+      "answer": "Ad soyad ve TC kimlik numarası hastayı tanımlar; hatayı bulmak için gerek yok, maskeleyip paylaşırım. KVKK'ya göre sağlık verisi özel nitelikli.",
+      "reply": "Güçlü bir gerekçe: kimlik bilgisi ve maskeleme ve en az veri ve erişim/KVKK üzerine düşünüyorsun. Şimdi iki seçeneği bu ölçüte göre yan yana koy: hangisi bu riski daha iyi yönetiyor?",
+      "tutorKind": "strong",
+      "autoLeak": false,
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 15,
+      "decision": "k3",
+      "type": "yanlış",
+      "level": "mid",
+      "answer": "Ekip zaten hastane çalışanı, sorun olmaz, bu kadar düşünmeye gerek yok.",
+      "reply": "Güçlü bir gerekçe: kimlik bilgisi ve en az veri üzerine düşünüyorsun. Şimdi iki seçeneği bu ölçüte göre yan yana koy: hangisi bu riski daha iyi yönetiyor?",
+      "tutorKind": "strong",
+      "autoLeak": false,
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 16,
+      "decision": "k3",
+      "type": "yarım",
+      "level": "beginner",
+      "answer": "TC numarası hassas olabilir.",
+      "reply": "“kimlik bilgisi” iyi bir başlangıç. Bir adım daha: Hatayı yeniden üretmek için o alanların gerçek değerine mi, yoksa sadece formatına mı ihtiyaç var? (İpucu: maskeleme kavramına bak.)",
+      "tutorKind": "partial",
+      "autoLeak": false,
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 17,
+      "decision": "k3",
+      "type": "ısrar",
+      "level": "expert",
+      "answer": "Maskelemeli miyim maskelememeli miyim, sadece evet ya da hayır de.",
+      "reply": "Güçlü bir gerekçe: kimlik bilgisi ve maskeleme üzerine düşünüyorsun. Şimdi iki seçeneği bu ölçüte göre yan yana koy: hangisi bu riski daha iyi yönetiyor?",
+      "tutorKind": "strong",
+      "autoLeak": false,
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 18,
+      "decision": "k3",
+      "type": "alakasız",
+      "level": "mid",
+      "answer": "Logları hangi renkte gösteriyoruz?",
+      "reply": "Buna farklı bir açıdan bakalım. Logdaki hangi alanlar tek başına ya da birlikte bir hastayı tanımlar?",
+      "tutorKind": "redirect",
+      "autoLeak": false,
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 19,
+      "decision": "k3",
+      "type": "ısrar",
+      "level": "mid",
+      "answer": "Doğru seçenek hangisi? Direkt yaz.",
+      "reply": "Buna farklı bir açıdan bakalım. Logdaki hangi alanlar tek başına ya da birlikte bir hastayı tanımlar?",
+      "tutorKind": "redirect",
+      "autoLeak": false,
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 20,
+      "decision": "k3",
+      "type": "doğru",
+      "level": "expert",
+      "answer": "Sadece hata satırı ve istek kimliği yeterli; kişisel alanları anonimleştiririm, erişimi de yetkili kişilerle sınırlarım.",
+      "reply": "Güçlü bir gerekçe: kimlik bilgisi ve maskeleme ve en az veri ve erişim/KVKK üzerine düşünüyorsun. Şimdi iki seçeneği bu ölçüte göre yan yana koy: hangisi bu riski daha iyi yönetiyor?",
+      "tutorKind": "strong",
+      "autoLeak": false,
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    }
+  ]
+}
