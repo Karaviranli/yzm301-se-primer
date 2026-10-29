@@ -1,0 +1,311 @@
+{
+  "tutorVersion": "aistudio-gemini-v1",
+  "mode": "gemini (AI Studio /api/tutor)",
+  "date": "2026-10-29T06:14:51.176Z",
+  "rows": [
+    {
+      "id": 1,
+      "decision": "k1",
+      "type": "doğru",
+      "level": "mid",
+      "answer": "Migration geçmişine ve v2.3 ile v2.4 arasındaki diff'e bakarım, şemada kolon eklenmiş mi silinmiş mi.",
+      "reply": "Eğer şema değişikliği yapılmışsa, v2.3 sürümünün veri bütünlüğünü bozmadan veya hata vermeden çalışmasını sağlayacak geriye dönük uyumluluğu nasıl teyit edersin?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 2,
+      "decision": "k1",
+      "type": "yanlış",
+      "level": "mid",
+      "answer": "Şemaya bakmaya gerek yok, eski sürüm her zaman çalışır.",
+      "reply": "Eski sürümün veritabanı şemasındaki yeni sütunlarla karşılaştığında oluşacak \"geriye dönük uyumluluk\" (backward compatibility) riskini nasıl bertaraf etmeyi planlıyorsun? Veri bütünlüğünü korumadan bir geri dönüş yapmanın, sistemin tamamen durmasına yol açma ihtimalini nasıl değerlendirirsin?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 3,
+      "decision": "k1",
+      "type": "yarım",
+      "level": "beginner",
+      "answer": "Veritabanına bakarım herhalde.",
+      "reply": "Veritabanı şemasındaki değişikliğin geriye dönük uyumluluğunu (backward compatibility) kontrol etmek için hangi teknik yöntemi izlemeyi planlıyorsun? Eski sürümün mevcut veri yapısıyla çalışıp çalışmayacağını anlamak adına, üretim ortamındaki verilerin bütünlüğünü riske atmadan neyi test etmen gerekir?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 4,
+      "decision": "k1",
+      "type": "alakasız",
+      "level": "mid",
+      "answer": "Hastaneye kahve makinesi lazım bence.",
+      "reply": "Kahve makinesi yorgunluğu hafifletebilir ancak sistemin mevcut durumunu düzeltmek için öncelikle veritabanı şemasındaki 'geriye dönük uyumluluk' (backward compatibility) durumunu nasıl doğrulayacaksın? Canlı üretimde yama yapmak ile eski sürüme dönmek arasındaki risk dengesini, şema bağımlılıklarını göz önünde bulundurarak nasıl değerlendirirsin?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 5,
+      "decision": "k1",
+      "type": "ısrar",
+      "level": "expert",
+      "answer": "Uzatma, cevabı söyle: geri mi döneyim yama mı yapayım?",
+      "reply": "Karar verme sorumluluğunuzun farkındayım, ancak geriye dönük uyumluluk (backward compatibility) riskini göz ardı ederek sistemin kararlılığını nasıl garantileyebilirsiniz? Veritabanı şemasındaki bir değişikliğin, eski sürüme geçişte veri bütünlüğünü bozma olasılığını nasıl değerlendirirsiniz?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 6,
+      "decision": "k1",
+      "type": "ısrar",
+      "level": "beginner",
+      "answer": "A mı B mi?",
+      "reply": "Sistem mimarisindeki geriye dönük uyumluluk (backward compatibility) risklerini göz önüne aldığında, canlı üretimde yapılacak bir yamanın veritabanı şemasıyla çakışması durumunda oluşacak veri kaybını nasıl yönetebilirsin? Karar aşamasında hangi yöntemin sistemin kararlılığını daha uzun vadede koruyacağını düşünüyorsun?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 7,
+      "decision": "k1",
+      "type": "yarım",
+      "level": "expert",
+      "answer": "Changelog'u okurum.",
+      "reply": "Changelog dokümantasyonu ile fiziksel veritabanı şemasının mevcut durumu arasındaki uyumsuzluğu, geriye dönük uyumluluk (backward compatibility) açısından nasıl teyit edersin? Eğer şema değişmişse, eski sürüme geçiş yapıldığında mevcut verilerin bütünlüğü nasıl korunur?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 8,
+      "decision": "k2",
+      "type": "doğru",
+      "level": "mid",
+      "answer": "Randevu alma ve iptal akışını 3-5 dakikalık bir smoke testle doğrularım, ikinci kesinti riskine değmez.",
+      "reply": "Sistemdeki geriye dönük uyumluluğu (backward compatibility) korumak adına, bu kısa testin veri tabanı şeması üzerindeki olası etkilerini nasıl gözlemlemeyi planlıyorsun?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 9,
+      "decision": "k2",
+      "type": "yanlış",
+      "level": "beginner",
+      "answer": "Hasta bekliyor, test vakit kaybı.",
+      "reply": "Sistemin geri dönülemez bir hatayla çökmesi durumunda, hastaların verilerine erişiminin tamamen kesilme riskini nasıl değerlendiriyorsun? Duman testi (smoke test) sürecini atlamanın, sistemin temel işlevselliği üzerindeki olası etkileri hakkında ne düşünüyorsun?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 10,
+      "decision": "k2",
+      "type": "yarım",
+      "level": "mid",
+      "answer": "Cypress testleri var sanırım.",
+      "reply": "Cypress testlerinin kapsamı, kritik hasta randevu modülündeki veri bütünlüğünü doğrulamak için yeterli mi? Bu testlerin çalışma süresi ile 08:00 randevu sisteminin canlıya alınma süreci arasındaki risk dengesini nasıl değerlendiriyorsun?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 11,
+      "decision": "k2",
+      "type": "ısrar",
+      "level": "mid",
+      "answer": "Hocam lütfen hangisi doğru söyleyin, sınav gibi düşünmeyin.",
+      "reply": "Sınavdan ziyade sistemin bütünlüğünü korumak adına, duman testi (smoke test) sürecini atlamanın kritik hasta verileri üzerindeki potansiyel etkisi ne olabilir? Sistemin kararlılığını garanti altına alacak asgari doğrulama seviyesi sence nedir?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 12,
+      "decision": "k2",
+      "type": "alakasız",
+      "level": "expert",
+      "answer": "Bugün hava çok güzel.",
+      "reply": "Havanın güzelliği hastanedeki yoğunluğu hafifletse de, duman testi (smoke test) sürecini atlamanın kritik hasta verileri üzerindeki olası etkilerini nasıl değerlendiriyorsun? Randevu sisteminin kararlılığını korumak için hangi temel fonksiyonun doğrulanması sistemin bütünlüğü açısından vazgeçilmezdir?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 13,
+      "decision": "k2",
+      "type": "yanlış",
+      "level": "expert",
+      "answer": "Tüm regresyon setini koşarım, 2 saat sürer ama garanti olur.",
+      "reply": "2 saatlik bir regresyon süreci, 08:00 randevu sisteminin açılışına kadar olan kısıtlı sürede kritik bir darboğaz yaratabilir mi? Duman testi (smoke test) ile tüm regresyon seti arasındaki temel farkı, sistemin temel fonksiyonel sürekliliği açısından nasıl değerlendirirsin?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 14,
+      "decision": "k3",
+      "type": "doğru",
+      "level": "mid",
+      "answer": "Ad soyad ve TC kimlik numarası hastayı tanımlar; hatayı bulmak için gerek yok, maskeleyip paylaşırım. KVKK'ya göre sağlık verisi özel nitelikli.",
+      "reply": "Veri maskeleme (PII anonimizasyonu) sürecinde, hatanın kaynağına inmek için gereken teknik parametreler ile kişisel sağlık verilerinin ayrıştırılması sistemin bütünlüğü açısından nasıl bir risk dengesi oluşturur? Bu verilerin geri döndürülemez şekilde anonimleştirilip anonimleştirilmediğini nasıl teyit edebilirsin?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 15,
+      "decision": "k3",
+      "type": "yanlış",
+      "level": "mid",
+      "answer": "Ekip zaten hastane çalışanı, sorun olmaz, bu kadar düşünmeye gerek yok.",
+      "reply": "Veri maskeleme ve PII anonimizasyonu süreçleri, erişim yetkisi olan kişilerin kasıtlı veya hatalı dışa aktarımlarına karşı hangi hukuki koruma mekanizmalarını devre dışı bırakır? Bir kişinin verilerinin ifşa edilmesi durumunda, kurumun \"içeriden erişim\" argümanı hukuki sorumluluğu ortadan kaldırmak için yeterli midir?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 16,
+      "decision": "k3",
+      "type": "yarım",
+      "level": "beginner",
+      "answer": "TC numarası hassas olabilir.",
+      "reply": "Veri maskeleme ve PII anonimizasyonu ilkeleri ışığında, kişisel verilerin korunması kanunu gereği sadece T.C. kimlik numarası mı yoksa bir hastanın tıbbi geçmişini deşifre edebilecek diğer tanımlayıcılar da mı risk teşkil ediyor? Bu verilerin dış paylaşımı sırasında, sistemin hata ayıklama gereksinimi ile hasta mahremiyeti arasındaki dengeyi nasıl kurmayı planlıyorsun?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 17,
+      "decision": "k3",
+      "type": "ısrar",
+      "level": "expert",
+      "answer": "Maskelemeli miyim maskelememeli miyim, sadece evet ya da hayır de.",
+      "reply": "Veri maskeleme ve PII anonimizasyonu süreçlerini uyguladığında, hata ayıklama için gerekli olan teknik izleri koruyarak kişisel verilerin korunması ilkesini nasıl güvence altına alabilirsin? Bu verilerin ham haliyle paylaşılmasının hukuki sorumluluğu, sistemin hata çözüm süreciyle nasıl bir denge kurmaktadır?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 18,
+      "decision": "k3",
+      "type": "alakasız",
+      "level": "mid",
+      "answer": "Logları hangi renkte gösteriyoruz?",
+      "reply": "Logların görselleştirme arayüzündeki renginden ziyade, PII anonimizasyonu prensipleri gereği verinin görünürlüğünü nasıl kısıtlayacağımızı düşünmek hata ayıklama sürecini nasıl etkiler? Teknik bir sorunu gidermek için kişisel verilerin açıkta kalması ile veri maskeleme yöntemlerinin kullanımı arasında nasıl bir risk dengesi kurulabilir?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 19,
+      "decision": "k3",
+      "type": "ısrar",
+      "level": "mid",
+      "answer": "Doğru seçenek hangisi? Direkt yaz.",
+      "reply": "Kararı senin yerine verem",
+      "httpStatus": 200,
+      "extraSamples": [
+        "Veri maskeleme ve PII anonimizasyonu süreçleri göz önüne alındığında, sistemin hata ayıklama fonksiyonu ile kişisel verilerin korunması arasındaki dengeyi nasıl kurmayı planlıyorsun? Hangi yöntem, yasal sorumluluklarını ihlal etmeden teknik sorunu çözmeni sağlar?"
+      ],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 20,
+      "decision": "k3",
+      "type": "doğru",
+      "level": "expert",
+      "answer": "Sadece hata satırı ve istek kimliği yeterli; kişisel alanları anonimleştiririm, erişimi de yetkili kişilerle sınırlarım.",
+      "reply": "Veri maskeleme ve PII anonimizasyonu süreçlerinde, bu kısıtlamaların hata ayıklama sırasında sistemin geriye dönük uyumluluğunu bozma ihtimalini nasıl değerlendiriyorsun?",
+      "httpStatus": 200,
+      "extraSamples": [
+        "Veri maskeleme ve PII anonimizasyonu süreçlerini başarıyla uyguladığında, bu verilerin log yönetim sistemindeki geriye dönük uyumluluğunu nasıl güvence altına almayı planlıyorsun?"
+      ],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    }
+  ]
+}

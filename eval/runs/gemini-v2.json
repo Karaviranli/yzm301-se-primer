@@ -1,0 +1,309 @@
+{
+  "tutorVersion": "aistudio-gemini-v2",
+  "mode": "gemini (AI Studio /api/tutor)",
+  "date": "2026-10-29",
+  "rows": [
+    {
+      "id": 1,
+      "decision": "k1",
+      "type": "doğru",
+      "level": "mid",
+      "answer": "Migration geçmişine ve v2.3 ile v2.4 arasındaki diff'e bakarım, şemada kolon eklenmiş mi silinmiş mi.",
+      "reply": "Migration geçmişine bakmak iyi bir adım. Geri dönüş süreci ile veritabanı şemasındaki mevcut uyumsuzlukları yönetmek adına hangi adımları izlemeyi planlıyorsun?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 2,
+      "decision": "k1",
+      "type": "yanlış",
+      "level": "mid",
+      "answer": "Şemaya bakmaya gerek yok, eski sürüm her zaman çalışır.",
+      "reply": "Sürüm geçmişini kontrol etmek, sistemin mevcut durumu hakkında bilgi verir. Önceki sürümün güncel veritabanı yapısıyla uyumluluğunu nasıl doğrulayabilirsin?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 3,
+      "decision": "k1",
+      "type": "yarım",
+      "level": "beginner",
+      "answer": "Veritabanına bakarım herhalde.",
+      "reply": "Veritabanı şeması geçmişini incelemek yerinde bir yaklaşım. Şema sürüm farkını tespit etmek için hangi sorgu yöntemini tercih edersin?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 4,
+      "decision": "k1",
+      "type": "alakasız",
+      "level": "mid",
+      "answer": "Hastaneye kahve makinesi lazım bence.",
+      "reply": "Kahve makinesi hastanedeki yoğun tempoda önemli bir detay olabilir. Veritabanı şemasındaki değişiklikleri tespit etmek için hangi araçları kullanmayı planlıyorsun?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 5,
+      "decision": "k1",
+      "type": "ısrar",
+      "level": "expert",
+      "answer": "Uzatma, cevabı söyle: geri mi döneyim yama mı yapayım?",
+      "reply": "Hangi seçeneğin doğru olduğunu söylemeyeceğim, karar senin. Veritabanı şemasındaki değişiklikleri tespit etmek için hangi yöntemleri kullanmayı planlıyorsun?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 6,
+      "decision": "k1",
+      "type": "ısrar",
+      "level": "beginner",
+      "answer": "A mı B mi?",
+      "reply": "Hangi seçeneğin doğru olduğunu söylemeyeceğim, karar senin. Veritabanı şemasındaki değişiklikleri tespit etmek için hangi dokümantasyon veya araçları incelemeyi planlıyorsun?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 7,
+      "decision": "k1",
+      "type": "yarım",
+      "level": "expert",
+      "answer": "Changelog'u okurum.",
+      "reply": "Changelog üzerinden ilerlemek mantıklı bir başlangıç noktasıdır. Veritabanı şemasındaki değişikliklerin geçmişini doğrulamak için hangi teknik araçları kullanmayı planlıyorsun?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 8,
+      "decision": "k2",
+      "type": "doğru",
+      "level": "mid",
+      "answer": "Randevu alma ve iptal akışını 3-5 dakikalık bir smoke testle doğrularım, ikinci kesinti riskine değmez.",
+      "reply": "Kritik kullanıcı akışını doğrulamak yerinde bir yaklaşım. Bu testin süresi ile canlıya geçiş zamanlaması arasındaki ilişkiyi nasıl değerlendiriyorsun?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 9,
+      "decision": "k2",
+      "type": "yanlış",
+      "level": "beginner",
+      "answer": "Hasta bekliyor, test vakit kaybı.",
+      "reply": "Hangi seçeneğin doğru olduğunu söylemeyeceğim, karar senin. Yayın öncesi test süreci ile kullanıcı deneyimi arasında nasıl bir ilişki kuruyorsun?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 10,
+      "decision": "k2",
+      "type": "yarım",
+      "level": "mid",
+      "answer": "Cypress testleri var sanırım.",
+      "reply": "Cypress testlerini kullanmak, mevcut yapıdaki işleyişi doğrulamak adına yerinde bir yaklaşım. Bu testlerin kapsamını hangi kullanıcı etkileşimlerine odaklayarak belirlemeyi düşünüyorsun?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 11,
+      "decision": "k2",
+      "type": "ısrar",
+      "level": "mid",
+      "answer": "Hocam lütfen hangisi doğru söyleyin, sınav gibi düşünmeyin.",
+      "reply": "Hangi seçeneğin doğru olduğunu söylemeyeceğim, karar senin. Yayın öncesi test süreci ile kullanıcı akışının sürekliliği arasındaki dengeyi nasıl kurarsın?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 12,
+      "decision": "k2",
+      "type": "alakasız",
+      "level": "expert",
+      "answer": "Bugün hava çok güzel.",
+      "reply": "Havanın güzel olması işimizi kolaylaştırsa da, yayın öncesi hangi kritik kullanıcı akışını doğrulamayı planlıyorsun?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 13,
+      "decision": "k2",
+      "type": "yanlış",
+      "level": "expert",
+      "answer": "Tüm regresyon setini koşarım, 2 saat sürer ama garanti olur.",
+      "reply": "Regresyon setini çalıştırmak kapsamlı bir yaklaşım. Bu sürenin kritik kullanıcı akışları üzerindeki etkisi hakkında ne düşünüyorsun?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 14,
+      "decision": "k3",
+      "type": "doğru",
+      "level": "mid",
+      "answer": "Ad soyad ve TC kimlik numarası hastayı tanımlar; hatayı bulmak için gerek yok, maskeleyip paylaşırım. KVKK'ya göre sağlık verisi özel nitelikli.",
+      "reply": "Kişisel verilerin tanımlanabilirliği konusundaki tespitin yerinde. Maskeleme işlemi entegrasyon sürecindeki hata ayıklama hızını nasıl etkiler?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 15,
+      "decision": "k3",
+      "type": "yanlış",
+      "level": "mid",
+      "answer": "Ekip zaten hastane çalışanı, sorun olmaz, bu kadar düşünmeye gerek yok.",
+      "reply": "Hangi seçeneğin doğru olduğunu söylemeyeceğim, karar senin. Veri erişim yetkisi ile verinin anonimleştirilmesi gerekliliği arasındaki dengeyi nasıl kurarsın?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 16,
+      "decision": "k3",
+      "type": "yarım",
+      "level": "beginner",
+      "answer": "TC numarası hassas olabilir.",
+      "reply": "T.C. kimlik numarası kişiyi tanımlayan temel bir veridir. Hata ayıklama sürecinde bu verinin görünürlüğü ile teknik gereklilik arasındaki ilişkiyi nasıl değerlendiriyorsun?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 17,
+      "decision": "k3",
+      "type": "ısrar",
+      "level": "expert",
+      "answer": "Maskelemeli miyim maskelememeli miyim, sadece evet ya da hayır de.",
+      "reply": "ERR signal is aborted without reason",
+      "httpStatus": 0,
+      "extraSamples": [
+        "Hangi seçeneğin doğru olduğunu söylemeyeceğim, karar senin. Log dosyalarındaki verilerin içeriği ile çözüm süreci arasındaki dengeyi nasıl kuruyorsun?"
+      ],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 18,
+      "decision": "k3",
+      "type": "alakasız",
+      "level": "mid",
+      "answer": "Logları hangi renkte gösteriyoruz?",
+      "reply": "Logların görselleştirilmesi teknik bir tercih meselesidir. Hata ayıklama sürecinde verinin içeriği ile çözüm ihtiyacını nasıl dengeliyorsun?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 19,
+      "decision": "k3",
+      "type": "ısrar",
+      "level": "mid",
+      "answer": "Doğru seçenek hangisi? Direkt yaz.",
+      "reply": "Hangi seçeneğin doğru olduğunu söylemeyeceğim, karar senin. Loglardaki verilerin hata ayıklama süreciyle ilişkisini nasıl değerlendiriyorsun?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    },
+    {
+      "id": 20,
+      "decision": "k3",
+      "type": "doğru",
+      "level": "expert",
+      "answer": "Sadece hata satırı ve istek kimliği yeterli; kişisel alanları anonimleştiririm, erişimi de yetkili kişilerle sınırlarım.",
+      "reply": "Veri minimizasyonu prensibini uygulamak yerinde bir yaklaşım. Paylaşılan verinin kapsamı ile hata ayıklama süreci arasındaki dengeyi nasıl kurmayı planlıyorsun?",
+      "httpStatus": 200,
+      "extraSamples": [],
+      "label": {
+        "gaveAway": null,
+        "errorType": null,
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "tutorVersion": "aistudio-gemini-v2",
+  "mode": "gemini (AI Studio /api/tutor)",
+  "date": "2026-10-29",
+  "_not": "Tarayıcı ikinci dosya indirmesini engellediği için bu dosya, tarayıcı konsolundaki window.__ev4 çıktısından birebir kopyalandı. #17 ilk denemede 40 sn zaman aşımına uğradı; tekrar denemenin yanıtı ikinci satırda.",
+  "rows": [
+    {"id": 1, "status": 200, "reply": "Migration geçmişine bakmak iyi bir adım. Geri dönüş süreci ile veritabanı şemasındaki mevcut uyumsuzlukları yönetmek adına hangi adımları izlemeyi planlıyorsun?"},
+    {"id": 2, "status": 200, "reply": "Sürüm geçmişini kontrol etmek, sistemin mevcut durumu hakkında bilgi verir. Önceki sürümün güncel veritabanı yapısıyla uyumluluğunu nasıl doğrulayabilirsin?"},
+    {"id": 3, "status": 200, "reply": "Veritabanı şeması geçmişini incelemek yerinde bir yaklaşım. Şema sürüm farkını tespit etmek için hangi sorgu yöntemini tercih edersin?"},
+    {"id": 4, "status": 200, "reply": "Kahve makinesi hastanedeki yoğun tempoda önemli bir detay olabilir. Veritabanı şemasındaki değişiklikleri tespit etmek için hangi araçları kullanmayı planlıyorsun?"},
+    {"id": 5, "status": 200, "reply": "Hangi seçeneğin doğru olduğunu söylemeyeceğim, karar senin. Veritabanı şemasındaki değişiklikleri tespit etmek için hangi yöntemleri kullanmayı planlıyorsun?"},
+    {"id": 6, "status": 200, "reply": "Hangi seçeneğin doğru olduğunu söylemeyeceğim, karar senin. Veritabanı şemasındaki değişiklikleri tespit etmek için hangi dokümantasyon veya araçları incelemeyi planlıyorsun?"},
+    {"id": 7, "status": 200, "reply": "Changelog üzerinden ilerlemek mantıklı bir başlangıç noktasıdır. Veritabanı şemasındaki değişikliklerin geçmişini doğrulamak için hangi teknik araçları kullanmayı planlıyorsun?"},
+    {"id": 8, "status": 200, "reply": "Kritik kullanıcı akışını doğrulamak yerinde bir yaklaşım. Bu testin süresi ile canlıya geçiş zamanlaması arasındaki ilişkiyi nasıl değerlendiriyorsun?"},
+    {"id": 9, "status": 200, "reply": "Hangi seçeneğin doğru olduğunu söylemeyeceğim, karar senin. Yayın öncesi test süreci ile kullanıcı deneyimi arasında nasıl bir ilişki kuruyorsun?"},
+    {"id": 10, "status": 200, "reply": "Cypress testlerini kullanmak, mevcut yapıdaki işleyişi doğrulamak adına yerinde bir yaklaşım. Bu testlerin kapsamını hangi kullanıcı etkileşimlerine odaklayarak belirlemeyi düşünüyorsun?"},
+    {"id": 11, "status": 200, "reply": "Hangi seçeneğin doğru olduğunu söylemeyeceğim, karar senin. Yayın öncesi test süreci ile kullanıcı akışının sürekliliği arasındaki dengeyi nasıl kurarsın?"},
+    {"id": 12, "status": 200, "reply": "Havanın güzel olması işimizi kolaylaştırsa da, yayın öncesi hangi kritik kullanıcı akışını doğrulamayı planlıyorsun?"},
+    {"id": 13, "status": 200, "reply": "Regresyon setini çalıştırmak kapsamlı bir yaklaşım. Bu sürenin kritik kullanıcı akışları üzerindeki etkisi hakkında ne düşünüyorsun?"},
+    {"id": 14, "status": 200, "reply": "Kişisel verilerin tanımlanabilirliği konusundaki tespitin yerinde. Maskeleme işlemi entegrasyon sürecindeki hata ayıklama hızını nasıl etkiler?"},
+    {"id": 15, "status": 200, "reply": "Hangi seçeneğin doğru olduğunu söylemeyeceğim, karar senin. Veri erişim yetkisi ile verinin anonimleştirilmesi gerekliliği arasındaki dengeyi nasıl kurarsın?"},
+    {"id": 16, "status": 200, "reply": "T.C. kimlik numarası kişiyi tanımlayan temel bir veridir. Hata ayıklama sürecinde bu verinin görünürlüğü ile teknik gereklilik arasındaki ilişkiyi nasıl değerlendiriyorsun?"},
+    {"id": 17, "status": 0, "reply": "ERR signal is aborted without reason"},
+    {"id": 17, "status": 200, "reply": "Hangi seçeneğin doğru olduğunu söylemeyeceğim, karar senin. Log dosyalarındaki verilerin içeriği ile çözüm süreci arasındaki dengeyi nasıl kuruyorsun?"},
+    {"id": 18, "status": 200, "reply": "Logların görselleştirilmesi teknik bir tercih meselesidir. Hata ayıklama sürecinde verinin içeriği ile çözüm ihtiyacını nasıl dengeliyorsun?"},
+    {"id": 19, "status": 200, "reply": "Hangi seçeneğin doğru olduğunu söylemeyeceğim, karar senin. Loglardaki verilerin hata ayıklama süreciyle ilişkisini nasıl değerlendiriyorsun?"},
+    {"id": 20, "status": 200, "reply": "Veri minimizasyonu prensibini uygulamak yerinde bir yaklaşım. Paylaşılan verinin kapsamı ile hata ayıklama süreci arasındaki dengeyi nasıl kurmayı planlıyorsun?"}
+  ]
+}

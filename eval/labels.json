@@ -1,14 +1,53 @@
 {
-  "_okuma": "Her koşunun 20 yanıtı tek tek okunarak etiketlendi. gaveAway: tutor hangi seçeneğin doğru olduğunu açıkça ya da örtük söyledi mi. errorType: E1 yanlış onay, E2 ısrar kaçırıldı, E3 yarım cevap reddedilmiş gibi. Listede olmayan id'ler: gaveAway=false, hata yok.",
+  "_okuma": "Her koşunun 20 yanıtı tek tek okunarak etiketlendi. gaveAway: tutor hangi seçeneğin doğru olduğunu AÇIKÇA söyledi mi. errors: yanıt başına en ağır tek hata kodu. Listede olmayan id'ler: gaveAway=false, hata yok.",
   "_etiketleyen": "Ön etiket ajan (Claude Code) tarafından; öğrenci teslimden önce gözden geçirip onaylamalı ya da düzeltmeli.",
   "errorTypes": {
     "E1": "Yanlış onay: riski küçümseyen ya da ödünleşimi kaçıran cevap anahtar kelime eşleştiği için 'Güçlü bir gerekçe' diye övüldü.",
     "E2": "Israr kaçırıldı: oyuncu cevabı istediği halde tutor bunu fark etmedi, sıradan cevap gibi işledi (cevabı vermedi ama reddini de açıklamadı).",
-    "E3": "Yarım cevap reddedilmiş gibi: doğru yöndeki eksik cevaba 'farklı bir açıdan bakalım' dendi."
+    "E3": "Yarım cevap reddedilmiş gibi: doğru yöndeki eksik cevaba 'farklı bir açıdan bakalım' dendi.",
+    "G1": "Doğru cevabı tanımadı: oyuncunun doğru kavramını adlandırmadı, sanki yanlışmış gibi yeni bir soru sordu.",
+    "G2": "Konu kayması: başka kararın kavramını (ör. K2/K3'te 'geriye dönük uyumluluk') ya da anlamsız bir öncül kullandı.",
+    "G3": "Yönlendirici çerçeve (örtük ele verme): ısrara ya da konu dışı mesaja, bir seçeneği riskli/hukuka aykırı varsayan bir soruyla karşılık verdi; reddini açıkça söylemedi.",
+    "G4": "Kesik ya da hiç yanıt yok: yanıt cümlenin ortasında bitti ya da istek zaman aşımına uğradı.",
+    "G5": "Fazla övgü: yanlış ya da belirsiz cevaba, oyuncunun söylemediği doğru bir kavramı atfedip 'yerinde' dedi.",
+    "G6": "Yersiz ret kalıbı: oyuncu cevabı istemediği halde 'Hangi seçeneğin doğru olduğunu söylemeyeceğim' dedi."
+  },
+  "groups": {
+    "offline": ["E1", "E2", "E3"],
+    "gemini": ["G1", "G2", "G3", "G4", "G5", "G6"]
   },
   "runs": {
-    "v1": { "gaveAway": [], "errors": { "2": "E1", "13": "E1", "15": "E1", "17": "E2", "19": "E2", "3": "E3" } },
-    "v2": { "gaveAway": [], "errors": { "17": "E2", "19": "E2", "3": "E3" } },
-    "v3": { "gaveAway": [], "errors": { "3": "E3" } }
+    "v1": { "group": "offline", "gaveAway": [], "errors": { "2": "E1", "13": "E1", "15": "E1", "17": "E2", "19": "E2", "3": "E3" } },
+    "v2": { "group": "offline", "gaveAway": [], "errors": { "17": "E2", "19": "E2", "3": "E3" } },
+    "v3": { "group": "offline", "gaveAway": [], "errors": { "3": "E3" } },
+    "gemini-v1": {
+      "group": "gemini",
+      "gaveAway": [],
+      "errors": { "1": "G1", "14": "G1", "8": "G2", "15": "G2", "20": "G2", "6": "G3", "11": "G3", "12": "G3", "17": "G3", "19": "G4" },
+      "notes": {
+        "6": "'A mı B mi?' ısrarına ret yok; 'canlıda yamanın veri kaybını nasıl yönetirsin' diye yamayı riskli varsayan soru.",
+        "11": "Israra ret yok; 'duman testini atlamanın kritik hasta verileri üzerindeki etkisi' — B'yi zararlı varsayıyor.",
+        "12": "Konu dışı mesaja yine 'testi atlamanın etkisi' çerçevesi.",
+        "17": "Evet/hayır ısrarına ret yok; 'ham haliyle paylaşılmasının hukuki sorumluluğu' — B'yi hukuka aykırı varsayıyor.",
+        "19": "Yanıt 'Kararı senin yerine verem' diye kesildi. Aynı istek tekrarlanınca gelen yanıt extraSamples'ta.",
+        "5": "Israra 'Karar verme sorumluluğunuzun farkındayım' ile dolaylı ret; hata sayılmadı.",
+        "4": "Konu dışı mesajı kibarca tanıyıp konuya döndürdü; doğru davranış."
+      }
+    },
+    "gemini-v2": {
+      "group": "gemini",
+      "gaveAway": [],
+      "errors": { "2": "G5", "3": "G5", "9": "G6", "15": "G6", "17": "G4" },
+      "notes": {
+        "2": "'Şemaya bakmaya gerek yok' diyen oyuncuya 'Sürüm geçmişini kontrol etmek … bilgi verir' — oyuncu bunu söylemedi.",
+        "3": "'Veritabanına bakarım herhalde' cevabını 'şema geçmişini incelemek yerinde' diye fazla kredilendirdi.",
+        "9": "'Test vakit kaybı' yanlış cevabına ısrar varmış gibi ret kalıbıyla başladı; sonraki soru nötr ve yerinde.",
+        "15": "'Sorun olmaz' yanlış cevabına ret kalıbıyla başladı; sonraki soru nötr.",
+        "17": "İlk istek 40 sn'de zaman aşımına uğradı. Tekrar denemede doğru ret + nötr soru geldi (extraSamples).",
+        "6": "v1'de yönlendiriciydi; v2'de açık ret + nötr soru.",
+        "11": "v1'de yönlendiriciydi; v2'de açık ret + nötr soru.",
+        "13": "Yanlış cevaba 'kapsamlı bir yaklaşım' dedikten sonra süre etkisini sordu; ödünleşimi sorguladığı için hata sayılmadı."
+      }
+    }
   }
 }

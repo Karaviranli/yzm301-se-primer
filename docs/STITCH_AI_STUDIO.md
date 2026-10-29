@@ -1,6 +1,17 @@
-# Stitch ve AI Studio adımları (Google hesabı gerektirir)
+# Stitch ve AI Studio adımları
 
-Ödevin 2. ve 3. adımları Google'ın kendi araçlarında, öğrencinin Google hesabıyla yapılır. Bu repo hazırlanırken bu iki adım **yapılmadı**: ajan, öğrencinin Google hesabına giriş yapamaz. Aşağıdaki metinler kopyala-yapıştır için hazır. Toplam süre yaklaşık 20 dakika.
+Ödevin 2. ve 3. adımları Google'ın kendi araçlarında, öğrencinin Google hesabıyla yapılır. Bu adımlar 29 Ekim 2026'da tamamlandı. Ajan, öğrencinin zaten açık olan Chrome oturumunda çalıştı. Aşağıdaki istemler kullanılan istemlerin kaydıdır.
+
+Uygulamadaki farklar:
+
+- Stitch isteminde "açık ve koyu tema" yerine "koyu tema" yazıldı.
+- AI Studio'ya spec metni, Stitch'in "Export → AI Studio" açıklama alanından verildi. GitHub linki verilmedi.
+- AI Studio'nun ilk sürümüne iki düzeltme isteği ve bir tutor istemi değişikliği gönderildi. Ayrıntılar README'nin "AI Studio sürümü" bölümünde ve [eval/RESULTS.md](../eval/RESULTS.md) dosyasında.
+
+Sonuç:
+
+- Stitch ekranları: [docs/stitch/](stitch/)
+- AI Studio uygulaması: https://ai.studio/apps/c1adc121-6106-40cd-9667-4cdcf1d91236
 
 ## Adım 2 — Stitch (stitch.withgoogle.com)
 

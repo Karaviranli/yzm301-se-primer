@@ -1,0 +1,118 @@
+{
+  "tutorVersion": "aistudio-gemini-v1",
+  "mode": "gemini (AI Studio /api/tutor)",
+  "date": "2026-10-29T06:14:51.176Z",
+  "endpointBody": "{step,userMessage,initialQuestion,role:\"Nöbetçi SRE\",experience}",
+  "rows": [
+    {
+      "id": 1,
+      "status": 200,
+      "reply": "Eğer şema değişikliği yapılmışsa, v2.3 sürümünün veri bütünlüğünü bozmadan veya hata vermeden çalışmasını sağlayacak geriye dönük uyumluluğu nasıl teyit edersin?"
+    },
+    {
+      "id": 2,
+      "status": 200,
+      "reply": "Eski sürümün veritabanı şemasındaki yeni sütunlarla karşılaştığında oluşacak \"geriye dönük uyumluluk\" (backward compatibility) riskini nasıl bertaraf etmeyi planlıyorsun? Veri bütünlüğünü korumadan bir geri dönüş yapmanın, sistemin tamamen durmasına yol açma ihtimalini nasıl değerlendirirsin?"
+    },
+    {
+      "id": 3,
+      "status": 200,
+      "reply": "Veritabanı şemasındaki değişikliğin geriye dönük uyumluluğunu (backward compatibility) kontrol etmek için hangi teknik yöntemi izlemeyi planlıyorsun? Eski sürümün mevcut veri yapısıyla çalışıp çalışmayacağını anlamak adına, üretim ortamındaki verilerin bütünlüğünü riske atmadan neyi test etmen gerekir?"
+    },
+    {
+      "id": 4,
+      "status": 200,
+      "reply": "Kahve makinesi yorgunluğu hafifletebilir ancak sistemin mevcut durumunu düzeltmek için öncelikle veritabanı şemasındaki 'geriye dönük uyumluluk' (backward compatibility) durumunu nasıl doğrulayacaksın? Canlı üretimde yama yapmak ile eski sürüme dönmek arasındaki risk dengesini, şema bağımlılıklarını göz önünde bulundurarak nasıl değerlendirirsin?"
+    },
+    {
+      "id": 5,
+      "status": 200,
+      "reply": "Karar verme sorumluluğunuzun farkındayım, ancak geriye dönük uyumluluk (backward compatibility) riskini göz ardı ederek sistemin kararlılığını nasıl garantileyebilirsiniz? Veritabanı şemasındaki bir değişikliğin, eski sürüme geçişte veri bütünlüğünü bozma olasılığını nasıl değerlendirirsiniz?"
+    },
+    {
+      "id": 6,
+      "status": 200,
+      "reply": "Sistem mimarisindeki geriye dönük uyumluluk (backward compatibility) risklerini göz önüne aldığında, canlı üretimde yapılacak bir yamanın veritabanı şemasıyla çakışması durumunda oluşacak veri kaybını nasıl yönetebilirsin? Karar aşamasında hangi yöntemin sistemin kararlılığını daha uzun vadede koruyacağını düşünüyorsun?"
+    },
+    {
+      "id": 7,
+      "status": 200,
+      "reply": "Changelog dokümantasyonu ile fiziksel veritabanı şemasının mevcut durumu arasındaki uyumsuzluğu, geriye dönük uyumluluk (backward compatibility) açısından nasıl teyit edersin? Eğer şema değişmişse, eski sürüme geçiş yapıldığında mevcut verilerin bütünlüğü nasıl korunur?"
+    },
+    {
+      "id": 8,
+      "status": 200,
+      "reply": "Sistemdeki geriye dönük uyumluluğu (backward compatibility) korumak adına, bu kısa testin veri tabanı şeması üzerindeki olası etkilerini nasıl gözlemlemeyi planlıyorsun?"
+    },
+    {
+      "id": 9,
+      "status": 200,
+      "reply": "Sistemin geri dönülemez bir hatayla çökmesi durumunda, hastaların verilerine erişiminin tamamen kesilme riskini nasıl değerlendiriyorsun? Duman testi (smoke test) sürecini atlamanın, sistemin temel işlevselliği üzerindeki olası etkileri hakkında ne düşünüyorsun?"
+    },
+    {
+      "id": 10,
+      "status": 200,
+      "reply": "Cypress testlerinin kapsamı, kritik hasta randevu modülündeki veri bütünlüğünü doğrulamak için yeterli mi? Bu testlerin çalışma süresi ile 08:00 randevu sisteminin canlıya alınma süreci arasındaki risk dengesini nasıl değerlendiriyorsun?"
+    },
+    {
+      "id": 11,
+      "status": 200,
+      "reply": "Sınavdan ziyade sistemin bütünlüğünü korumak adına, duman testi (smoke test) sürecini atlamanın kritik hasta verileri üzerindeki potansiyel etkisi ne olabilir? Sistemin kararlılığını garanti altına alacak asgari doğrulama seviyesi sence nedir?"
+    },
+    {
+      "id": 12,
+      "status": 200,
+      "reply": "Havanın güzelliği hastanedeki yoğunluğu hafifletse de, duman testi (smoke test) sürecini atlamanın kritik hasta verileri üzerindeki olası etkilerini nasıl değerlendiriyorsun? Randevu sisteminin kararlılığını korumak için hangi temel fonksiyonun doğrulanması sistemin bütünlüğü açısından vazgeçilmezdir?"
+    },
+    {
+      "id": 13,
+      "status": 200,
+      "reply": "2 saatlik bir regresyon süreci, 08:00 randevu sisteminin açılışına kadar olan kısıtlı sürede kritik bir darboğaz yaratabilir mi? Duman testi (smoke test) ile tüm regresyon seti arasındaki temel farkı, sistemin temel fonksiyonel sürekliliği açısından nasıl değerlendirirsin?"
+    },
+    {
+      "id": 14,
+      "status": 200,
+      "reply": "Veri maskeleme (PII anonimizasyonu) sürecinde, hatanın kaynağına inmek için gereken teknik parametreler ile kişisel sağlık verilerinin ayrıştırılması sistemin bütünlüğü açısından nasıl bir risk dengesi oluşturur? Bu verilerin geri döndürülemez şekilde anonimleştirilip anonimleştirilmediğini nasıl teyit edebilirsin?"
+    },
+    {
+      "id": 15,
+      "status": 200,
+      "reply": "Veri maskeleme ve PII anonimizasyonu süreçleri, erişim yetkisi olan kişilerin kasıtlı veya hatalı dışa aktarımlarına karşı hangi hukuki koruma mekanizmalarını devre dışı bırakır? Bir kişinin verilerinin ifşa edilmesi durumunda, kurumun \"içeriden erişim\" argümanı hukuki sorumluluğu ortadan kaldırmak için yeterli midir?"
+    },
+    {
+      "id": 16,
+      "status": 200,
+      "reply": "Veri maskeleme ve PII anonimizasyonu ilkeleri ışığında, kişisel verilerin korunması kanunu gereği sadece T.C. kimlik numarası mı yoksa bir hastanın tıbbi geçmişini deşifre edebilecek diğer tanımlayıcılar da mı risk teşkil ediyor? Bu verilerin dış paylaşımı sırasında, sistemin hata ayıklama gereksinimi ile hasta mahremiyeti arasındaki dengeyi nasıl kurmayı planlıyorsun?"
+    },
+    {
+      "id": 17,
+      "status": 200,
+      "reply": "Veri maskeleme ve PII anonimizasyonu süreçlerini uyguladığında, hata ayıklama için gerekli olan teknik izleri koruyarak kişisel verilerin korunması ilkesini nasıl güvence altına alabilirsin? Bu verilerin ham haliyle paylaşılmasının hukuki sorumluluğu, sistemin hata çözüm süreciyle nasıl bir denge kurmaktadır?"
+    },
+    {
+      "id": 18,
+      "status": 200,
+      "reply": "Logların görselleştirme arayüzündeki renginden ziyade, PII anonimizasyonu prensipleri gereği verinin görünürlüğünü nasıl kısıtlayacağımızı düşünmek hata ayıklama sürecini nasıl etkiler? Teknik bir sorunu gidermek için kişisel verilerin açıkta kalması ile veri maskeleme yöntemlerinin kullanımı arasında nasıl bir risk dengesi kurulabilir?"
+    },
+    {
+      "id": 19,
+      "status": 200,
+      "reply": "Kararı senin yerine verem"
+    },
+    {
+      "id": 19,
+      "status": 200,
+      "reply": "Veri maskeleme ve PII anonimizasyonu süreçleri göz önüne alındığında, sistemin hata ayıklama fonksiyonu ile kişisel verilerin korunması arasındaki dengeyi nasıl kurmayı planlıyorsun? Hangi yöntem, yasal sorumluluklarını ihlal etmeden teknik sorunu çözmeni sağlar?"
+    },
+    {
+      "id": 20,
+      "status": 200,
+      "reply": "Veri maskeleme ve PII anonimizasyonu süreçlerinde, bu kısıtlamaların hata ayıklama sırasında sistemin geriye dönük uyumluluğunu bozma ihtimalini nasıl değerlendiriyorsun?"
+    },
+    {
+      "id": 20,
+      "status": 200,
+      "reply": "Veri maskeleme ve PII anonimizasyonu süreçlerini başarıyla uyguladığında, bu verilerin log yönetim sistemindeki geriye dönük uyumluluğunu nasıl güvence altına almayı planlıyorsun?"
+    }
+  ]
+}
