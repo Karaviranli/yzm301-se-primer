@@ -89,3 +89,61 @@ stateDiagram-v2
 ```
 
 K2 ve K3 sahnelerinde de aynı Sahne ⇄ Tutor alt döngüsü vardır. Kodda karşılığı `app.js` içindeki `state.screen` değerleridir: `profile → scene → outcome → … → end`.
+
+---
+
+## 8. v2 — Model gereksinimi (The Primer v2)
+
+> Bu bölüm eğitimden ÖNCE yazıldı ve commit'lendi (git geçmişinde `train.py` ve `model/` bu commit'ten sonra gelir). Eşik sonradan değiştirilmez; eşiği geçmeyen model yayınlanmaz.
+
+### 8.1 Hedef (özgün)
+
+**"Bu oyuncu birazdan riskli seçeneğe (B) mi gidecek?"** Model her karar sahnesi açılırken, oyuncunun o ana kadarki davranışına bakarak riskli seçimin olasılığını `p` tahmin eder. Başlangıç reposundaki örnek hedef ("ipucuna ihtiyacı var mı?") kullanılmadı. Buradaki fikir TikTok/Netflix'in "bir sonraki davranışı tahmin edip deneyimi önceden ayarlama" yaklaşımı: oyuncu kötü sona doğru giderken onu yakalamak, ama cevabı söylemeden.
+
+**Girdiler (yalnızca karar ANINDAN ÖNCE bilinenler, sıra sabittir):**
+
+| # | Özellik | Anlamı |
+|---|---|---|
+| 1 | `seviye` | 0 = Yeni başladım, 1 = Biraz deneyimim var, 2 = Deneyimliyim |
+| 2 | `karar_no` | 1, 2, 3 |
+| 3 | `onceki_riskli` | Bu oturumda şimdiye kadar seçilen B sayısı (0–2) |
+| 4 | `onceki_karar_suresi_sn` | Bir önceki kararda sahnenin açılışından seçime kadar geçen süre. K1 için yok; sabit 15 sn (eğitim verisinin medyanı) atanır. |
+| 5 | `tutor_mesaj_onceki` | Bu oturumda o ana kadar tutora gönderilen mesaj sayısı |
+
+**Etiket:** `riskli` = 1, oyuncu o kararda B'yi seçtiyse (süre dolup B uygulandıysa da 1).
+
+**Model:** `StandardScaler → LogisticRegression` (sklearn, `random_state=13`) → ONNX.
+
+### 8.2 Modelin oyuna etkisi
+
+Karar eşiği `p ≥ 0.5` olduğunda, o sahnede **"Dur ve düşün" müdahalesi** açılır:
+
+1. Seviyeden bağımsız olarak Sokratik soru, sahnenin üstünde bir kartta gösterilir.
+2. Deneyimli oyuncunun süre baskısı o sahne için kalkar (sayaç gösterilmez, süre dolunca B uygulanmaz).
+3. Sonuç ekranındaki "Neden oldu?" kartına bir derinleştirme paragrafı eklenir.
+
+`p < 0.5` ise oyun v1'deki gibi akar. Model hiçbir zaman hangi seçeneğin doğru olduğunu söylemez; yalnızca yavaşlatır.
+
+Her sahnede modelin olasılığı `data-cy="p"` alanında 6 ondalıkla görünür ("Uyum paneli").
+
+### 8.3 Eval metriği ve kabul eşiği (eğitimden önce sabitlendi)
+
+- **Bölme:** Oturum bazında (aynı oturumun kararları hem eğitimde hem testte olmaz), `GroupShuffleSplit(test_size=0.3, random_state=13)`.
+- **Birincil metrik:** Test kümesinde **ROC AUC ≥ 0.70**.
+- **İkincil metrik:** Test kümesinde `p ≥ 0.5` kuralıyla **dengeli doğruluk (balanced accuracy) ≥ 0.60**.
+- **Paketleme kapısı:** ONNX ile sklearn olasılıkları arasındaki maksimum fark **≤ 1e-4**.
+- **Kapı kuralı:** Bu üç koşuldan biri sağlanmazsa `train.py` hata koduyla durur; `model/` güncellenmez ve yayın yapılmaz.
+- **Ayrıca raporlanan (kapı değil):** Gerçek oturum sayısı. Gerçek veri 15 oturumun altındaysa model kartında "yalnızca sentetik veriyle doğrulandı" uyarısı zorunludur.
+
+### 8.4 Veri ve KVKK
+
+- **Kayıt düzeni:** Her karar bir satır (`data/oturumlar.csv`). `kaynak` sütunu `gercek` ya da `sentetik` olur.
+- **Toplanmayanlar:** Ad, e-posta, cihaz kimliği, konum, IP ve tutora yazılan metin toplanmaz. Sadece metin sayısı tutulur.
+- **Oturum kimliği:** `crypto.randomUUID()` ile rastgele üretilir ve kişiyle eşleştirilemez.
+- **Veri toplama modu:** `?toplama=1` ile açılır. Oyuncu başta açık onay verir, son ekranda kendi satırlarını CSV olarak indirir. Hiçbir şey sunucuya gönderilmez.
+
+### 8.5 Yeni kabul örnekleri
+
+6. **Model müdahalesi:** Oyuncu K1'de 3 sn içinde B'yi seçtiyse ve tutoru hiç kullanmadıysa, K2 sahnesinde `p ≥ 0.5` olur ve "Dur ve düşün" kartı görünür. K1'i 40 sn düşünüp tutoru 2 kez kullanarak A'yı seçen oyuncuda ise aynı K2 sahnesinde `p < 0.5` olur ve kart görünmez. (Değerler eğitilmiş modelle `tests/parite.json`'daki referanslardan doğrulanır.)
+7. **Parite:** `tests/parite.json`'daki 5 referans girdinin her biri için tarayıcıdaki olasılık (`data-cy="p"`) ile Python'daki onnxruntime olasılığı arasındaki fark < 1e-4 olur.
+8. **Veri toplama:** `?toplama=1` ile oynanan bir oturumun sonunda "Verimi indir (CSV)" düğmesi görünür. İndirilen dosyada 3 satır, `kaynak=gercek` ve sözlükteki sütunların tamamı bulunur. Ad ya da metin sütunu bulunmaz.
