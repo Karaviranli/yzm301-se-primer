@@ -1,0 +1,63 @@
+{
+  "model": "model/model.onnx",
+  "config_surum": "2.0.0",
+  "tolerans": 0.0001,
+  "kahin": "Python onnxruntime 1.31.1",
+  "referanslar": [
+    {
+      "ad": "K1, deneyimli, geçmiş yok",
+      "x": [
+        2,
+        1,
+        0,
+        15,
+        0
+      ],
+      "p": 0.4753308892250061
+    },
+    {
+      "ad": "K1, yeni başlayan, geçmiş yok",
+      "x": [
+        0,
+        1,
+        0,
+        15,
+        0
+      ],
+      "p": 0.5397175550460815
+    },
+    {
+      "ad": "K2, K1'de 3 sn'de B, tutor yok (orta)",
+      "x": [
+        1,
+        2,
+        1,
+        3,
+        0
+      ],
+      "p": 0.8157564401626587
+    },
+    {
+      "ad": "K2, K1'de 40 sn düşünüp A, 2 tutor mesajı (orta)",
+      "x": [
+        1,
+        2,
+        0,
+        40,
+        2
+      ],
+      "p": 0.16933226585388184
+    },
+    {
+      "ad": "K3, iki kez B, son karar 1.5 sn (deneyimli)",
+      "x": [
+        2,
+        3,
+        2,
+        1.5,
+        0
+      ],
+      "p": 0.9100778102874756
+    }
+  ]
+}

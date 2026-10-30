@@ -42,3 +42,7 @@ ol.recap { padding-left: 20px; margin: 0; }
 ol.recap li { margin-bottom: 6px; }
 details summary { cursor: pointer; color: var(--muted); font-size: 14px; }
 details input { width: 100%; font: inherit; padding: 8px; margin-top: 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); }
+.pause { border-left: 6px solid var(--warn); }
+.consent { align-items: flex-start; font-size: 14px; }
+.model-panel { font-size: 13px; border-top: 1px dashed var(--line); padding-top: 8px; margin-top: 16px; }
+.model-panel b { font-variant-numeric: tabular-nums; }

@@ -1,0 +1,118 @@
+{
+  "$schema": "./config.schema.json",
+  "model_adi": "primer-riskli-secim",
+  "surum": "2.0.0",
+  "amac": "Karar sahnesi açılırken oyuncunun riskli seçeneğe (B) gitme olasılığını tahmin eder; p >= karar_esigi ise oyun 'Dur ve düşün' müdahalesi açar.",
+  "girdi": {
+    "ad": "input",
+    "tip": "float32",
+    "sekil": [
+      null,
+      5
+    ],
+    "ozellikler": [
+      {
+        "ad": "seviye",
+        "tip": "integer",
+        "aralik": [
+          0,
+          2
+        ],
+        "aciklama": "0 Yeni başladım, 1 Biraz deneyimim var, 2 Deneyimliyim"
+      },
+      {
+        "ad": "karar_no",
+        "tip": "integer",
+        "aralik": [
+          1,
+          3
+        ]
+      },
+      {
+        "ad": "onceki_riskli",
+        "tip": "integer",
+        "aralik": [
+          0,
+          2
+        ],
+        "aciklama": "Bu oturumda önceki B seçimi sayısı"
+      },
+      {
+        "ad": "onceki_karar_suresi_sn",
+        "tip": "number",
+        "aralik": [
+          1,
+          120
+        ],
+        "aciklama": "Önceki kararın süresi; K1 için 15"
+      },
+      {
+        "ad": "tutor_mesaj_onceki",
+        "tip": "integer",
+        "aralik": [
+          0,
+          50
+        ],
+        "aciklama": "Önceki kararlarda tutora gönderilen mesaj sayısı"
+      }
+    ]
+  },
+  "cikti": {
+    "ad": "probabilities",
+    "tip": "float32",
+    "sekil": [
+      null,
+      2
+    ],
+    "sinif_sirasi": [
+      0,
+      1
+    ]
+  },
+  "sinif_etiketleri": {
+    "0": "güvenli seçim (A)",
+    "1": "riskli seçim (B)"
+  },
+  "karar_esigi": 0.5,
+  "kabul_esikleri": {
+    "roc_auc": 0.7,
+    "balanced_accuracy": 0.6,
+    "onnx_sklearn_maks_fark": 0.0001
+  },
+  "metrikler": {
+    "roc_auc": 0.7193,
+    "balanced_accuracy": 0.655,
+    "accuracy": 0.6378,
+    "brier": 0.2107,
+    "test_satir": 900,
+    "egitim_satir": 2100,
+    "pozitif_orani_test": 0.3278,
+    "onnx_sklearn_maks_fark": 8.86e-08
+  },
+  "veri": {
+    "dosya": "data/oturumlar.csv",
+    "sha256": "715940eae1330012e591b137f26824f3243695991b3b160476b520136353b2c8",
+    "satir": 3000,
+    "oturum": {
+      "gercek": 0,
+      "sentetik": 1000
+    },
+    "yalniz_sentetik_dogrulandi": true
+  },
+  "egitim": {
+    "algoritma": "StandardScaler -> LogisticRegression",
+    "random_state": 13,
+    "bolme": "GroupShuffleSplit(test_size=0.3) oturum bazında",
+    "sklearn": "1.8.0",
+    "onnxruntime": "1.31.1",
+    "python": "3.14",
+    "tarih": "2026-10-30"
+  },
+  "katsayilar_olcekli": {
+    "seviye": -0.1065,
+    "karar_no": -0.1266,
+    "onceki_riskli": 0.6132,
+    "onceki_karar_suresi_sn": -0.6429,
+    "tutor_mesaj_onceki": -0.1829
+  }
+}

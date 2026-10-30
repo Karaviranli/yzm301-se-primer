@@ -35,6 +35,8 @@
         },
         tutorQuestion:
           "Geri dönmeden önce veritabanı şemasının değişip değişmediğini nasıl anlarsın?",
+        derin:
+          "Derinleştirme: Geri dönüşün güvenli olup olmadığını belirleyen şey kodun değil verinin durumudur. Kolon eklemek (genişletme) eski kodu bozmaz; kolon silmek ya da yeniden adlandırmak bozar. Bu yüzden ekipler 'genişlet → taşı → daralt' (expand/contract) adımlarıyla migration yazar: her adım tek başına geri alınabilir kalır.",
       },
       {
         id: "k2",
@@ -59,6 +61,8 @@
         },
         tutorQuestion:
           "Yayına almadan önce hangi kullanıcı akışının kesinlikle çalıştığından emin olmak istersin ve bunu kaç dakikada kontrol edebilirsin?",
+        derin:
+          "Derinleştirme: Duman testi tam bir regresyon testi değildir; amacı 'sistem en temel işini yapıyor mu?' sorusunu dakikalar içinde yanıtlamaktır. Kriz anında test süresi ile ikinci bir kesintinin maliyeti tartılır: 3 dakikalık test, 12 dakikalık yeni bir arızadan ucuzdur. Testi atlamak süre kazandırmaz, riski kullanıcıya devreder.",
       },
       {
         id: "k3",
@@ -84,6 +88,8 @@
         },
         tutorQuestion:
           "Bu logdaki hangi alanlar bir kişiyi tanımlanabilir kılar ve hatayı bulmak için bunlara gerçekten ihtiyaç var mı?",
+        derin:
+          "Derinleştirme: KVKK'nın 4. maddesi kişisel verinin 'amaçla bağlantılı, sınırlı ve ölçülü' işlenmesini ister. Hata ayıklamanın amacı hatayı bulmaktır; hastanın kim olduğu bu amaca hizmet etmez. Maskeleme, takma ad (pseudonymization) ve en az veri ilkesi tam da bu yüzden vardır: veri işlenebilir ama kişi tanınmaz.",
       },
     ],
     endings: {

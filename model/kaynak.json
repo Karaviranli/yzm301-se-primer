@@ -1,0 +1,5 @@
+{
+  "url": "model/model.onnx",
+  "yayilim": { "mod": "tam", "oran": 1 },
+  "not": "Hugging Face yayınından sonra scripts/hf_yayinla.py url alanını commit'e sabit resolve URL'siyle değiştirir. Rollback: url'ye önceki commit'in URL'sini yaz. Yayılım: mod golge | kanarya | tam (RELEASE.md)."
+}

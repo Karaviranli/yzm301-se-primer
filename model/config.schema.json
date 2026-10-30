@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "config.schema.json",
+  "title": "Primer uyum modeli sözleşmesi",
+  "description": "model.onnx'i tüketen her uygulamanın (tarayıcı, Python kahini, sunucu) uyması gereken girdi/çıktı sözleşmesi. train.py yazdığı config.json'ı bu şemaya göre doğrular.",
+  "type": "object",
+  "required": ["model_adi", "surum", "girdi", "cikti", "sinif_etiketleri", "karar_esigi", "kabul_esikleri", "metrikler", "veri", "egitim"],
+  "properties": {
+    "model_adi": { "type": "string" },
+    "surum": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "girdi": {
+      "type": "object",
+      "required": ["ad", "tip", "sekil", "ozellikler"],
+      "properties": {
+        "ad": { "const": "input" },
+        "tip": { "const": "float32" },
+        "sekil": { "type": "array", "prefixItems": [{ "type": "null" }, { "const": 5 }], "items": false },
+        "ozellikler": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "prefixItems": [
+            { "type": "object", "properties": { "ad": { "const": "seviye" } }, "required": ["ad"] },
+            { "type": "object", "properties": { "ad": { "const": "karar_no" } }, "required": ["ad"] },
+            { "type": "object", "properties": { "ad": { "const": "onceki_riskli" } }, "required": ["ad"] },
+            { "type": "object", "properties": { "ad": { "const": "onceki_karar_suresi_sn" } }, "required": ["ad"] },
+            { "type": "object", "properties": { "ad": { "const": "tutor_mesaj_onceki" } }, "required": ["ad"] }
+          ],
+          "items": {
+            "type": "object",
+            "required": ["ad", "tip", "aralik"],
+            "properties": {
+              "tip": { "enum": ["integer", "number"] },
+              "aralik": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 }
+            }
+          }
+        }
+      }
+    },
+    "cikti": {
+      "type": "object",
+      "required": ["ad", "sinif_sirasi"],
+      "properties": {
+        "ad": { "const": "probabilities" },
+        "sinif_sirasi": { "const": [0, 1] }
+      }
+    },
+    "sinif_etiketleri": { "type": "object", "required": ["0", "1"] },
+    "karar_esigi": { "type": "number", "minimum": 0, "maximum": 1 },
+    "kabul_esikleri": {
+      "type": "object",
+      "required": ["roc_auc", "balanced_accuracy", "onnx_sklearn_maks_fark"]
+    },
+    "metrikler": {
+      "type": "object",
+      "required": ["roc_auc", "balanced_accuracy", "accuracy", "brier", "onnx_sklearn_maks_fark"],
+      "properties": {
+        "roc_auc": { "type": "number", "minimum": 0, "maximum": 1 },
+        "balanced_accuracy": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "veri": {
+      "type": "object",
+      "required": ["dosya", "sha256", "satir", "oturum", "yalniz_sentetik_dogrulandi"],
+      "properties": { "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" } }
+    },
+    "egitim": { "type": "object", "required": ["algoritma", "random_state", "sklearn", "onnxruntime"] }
+  }
+}

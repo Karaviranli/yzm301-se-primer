@@ -1,0 +1,11 @@
+# Bonus: Render ücretsiz web servisi (hesap açılınca "New → Blueprint" ile bu dosya seçilir).
+services:
+  - type: web
+    name: primer-uyum-modeli
+    runtime: python
+    plan: free
+    buildCommand: pip install -r server/requirements.txt
+    startCommand: uvicorn server.app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: MODEL_URL
+        sync: false # HF yayınından sonra commit'e sabit resolve URL'si yazılır

@@ -5,7 +5,9 @@
     "serve": "node serve.cjs",
     "eval": "node eval/run_eval.cjs",
     "cy:run": "cypress run --browser electron",
-    "cy:demo": "cypress run --browser electron --spec cypress/e2e/demo.cy.js"
+    "cy:demo": "cypress run --browser electron --spec cypress/e2e/demo.cy.js",
+    "test": "node scripts/e2e.cjs",
+    "cy:demo-v2": "cypress run --browser electron --spec cypress/e2e/demo-v2.cy.js"
   },
   "devDependencies": {
     "cypress": "^15.21.1"
